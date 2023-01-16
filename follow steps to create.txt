@@ -1,0 +1,73 @@
+//open mysql and copy paste:
+-------------------------------------------------------------------------------------------------
+
+alter user 'root'@'localhost' identified with mysql_native_password by 'password';
+create database DBExam;
+use DBExam;
+create table Person(
+Id int,
+Name varchar(100),
+LName varchar(50),
+City varchar(100),
+Salary varchar(100),
+Gender varchar(10));
+
+insert into Person values(1,'Aniket','Sonje','Mumbai','50000','M');
+insert into Person values(2,'Tanmay','Kul','Pune','10000','F');
+insert into Person values(3,'Durgesh','Nand','Nashik','90000','HS');
+insert into Person values(4,'Avadhoot','Sonje','Thane','70000','G');
+
+-------------------------------------------------------------------------------------------------
+
+//open create a folder and open it with cmd and copypaste:
+
+-------------------------------------------------------------------------------------------------
+dotnet new sln
+dotnet new react -o myapp
+dotnet sln add myapp/myapp.csproj
+cd myapp
+dotnet add package Microsoft.EntityFrameworkCore --version 5.0.17
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 5.0.17
+dotnet add package MySql.EntityFrameworkCore --version 5.0.17+MySQL8.0.31
+dotnet tool install --global dotnet-ef
+dotnet ef dbcontext scaffold "server=localhost;user id=root;password=password;database=DBExam" MySql.EntityFrameworkCore -o Models
+-------------------------------------------------------------------------------------------------
+
+//open program.cs in 
+//1st line write : 
+-------------------------------------------------------------------------------------------------
+	using myapp.Models;
+-------------------------------------------------------------------------------------------------
+6th line write:
+-------------------------------------------------------------------------------------------------
+	builder.Services.AddDbContext<DBTESTContext>();
+-------------------------------------------------------------------------------------------------
+
+//paste StudentController.cs in controller folder 
+
+//Replace app.js and index.js in client/src with given app.js and index.js
+
+//open client/src/setupProxy.js 
+//8th line after /weatherForecase write:
+-------------------------------------------------------------------------------------------------
+	"/api/Student"
+-------------------------------------------------------------------------------------------------
+//run app type run command in terminal
+-------------------------------------------------------------------------------------------------
+	dotnet run
+-------------------------------------------------------------------------------------------------
+
+alter user 'root'@'localhost' identified with mysql_native_password by 'password';
+create database DURGESH;
+use DURGESH;
+create table Student(
+Id int,
+Name varchar(100),
+Email varchar(100),
+Address varchar(100),
+Phone varchar(100));
+insert into Student values(1,'Nikhil','nikhil.solankhi.ns@gmail.com','Rajasthan','123456789');
+insert into Student values(2,'Tanmay','tanmay@gmail.com','Dholpur','987654321');
+insert into Student values(3,'Deeksha','deeksha@gmail.com','Jhansi','456798123');
+insert into Student values(4,'Mayank','mayank@gmail.com','Mumbai','654321987');
+insert into Student values(5,'Yash','yash@gmail.com','Gujrat','987456321');
