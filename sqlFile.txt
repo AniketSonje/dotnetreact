@@ -1,0 +1,15 @@
+alter user 'root'@'localhost' identified with mysql_native_password by 'password';
+
+create database DBExam;
+use DBExam;
+
+create table Player(
+Id int,
+Name varchar(50),
+Runs int,
+Centuries int);
+
+insert into Player values(1,'Sachin',14800,100);
+insert into Player values(2,'Virat',12200,74);
+insert into Player values(3,'Rohit',10400,50);
+insert into Player values(4,'Dhoni',9700,32);
